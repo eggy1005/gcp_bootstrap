@@ -1,5 +1,4 @@
-variable "project_name" {
-}
+
 variable "billing_account" {}
 variable "org_id" {}
 variable "region" {}
@@ -13,8 +12,12 @@ resource "random_id" "id" {
   prefix      = var.project_name
 }
 
+locals{
+  uid = lower(random_id.id.hex)
+}
+
 resource "google_project" "project" {
-  name            = var.project_name
+  name            = "jessy-cloud-${uid}"
   project_id      = random_id.id.hex
   billing_account = var.billing_account
   org_id          = var.org_id
