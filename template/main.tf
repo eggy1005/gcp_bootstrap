@@ -1,10 +1,11 @@
 terraform{
-    backend "gcs"{
-        bucket = "${bucket_name}"
+    backend "gcs" {
+        bucket = google_storage_bucket.tf_state_bucket.name
         prefix = "terraform/state"
     }
 }
-
-resource "google_compute_network" "vpc_network" {
-  name = "vpc-network"
+resource "null_resource" "null" {
+    triggers = {
+        value = "Doing nothing"
+    }
 }
