@@ -17,14 +17,14 @@ resource "github_branch" "jessyimpl"{
 resource "github_actions_secret" "myaccount"{
     repository = github_repository.infra.name
     secret_name = "GCP_SA_KEY"
-    plaintext_value = base64decode(google_service_account_key.github_action_secret.private_key)
+    plaintext_value = base64decode(google_service_account_key.mykey.private_key)
 
 }
 
 resource "github_actions_secret" "project_id"{
     repository = github_repository.infra.name
     secret_name = "GCP_PROJECT_ID"
-    plaintext_value = google_project.project_id
+    plaintext_value = google_project.project.project_id
 }
 
 resource "github_repository_file" "tf_action_file"{
