@@ -1,12 +1,11 @@
+provider "google" {
+  
+}
 
+provider "random"{}
 
 variable "region" {
   default = "EU"
-}
-
-
-provider "google" {
-  region = var.region
 }
 
 resource "random_id" "id" {
@@ -20,7 +19,7 @@ locals{
 
 resource "google_project" "project" {
   name            = "jessy-cloud-${local.uid}"
-  project_id      = "gcp-${local.uid}"
+  project_id      = "g-${local.uid}"
   billing_account = var.gcp_billing_acc
 }
 
