@@ -1,5 +1,5 @@
 provider "github"{
-    token = "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"
+    token = var.github_token
     owner = var.github_owner
 }
 

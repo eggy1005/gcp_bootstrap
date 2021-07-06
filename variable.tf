@@ -1,6 +1,6 @@
 variable "github_token" {
     type = string
-    default = "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"
+
 }
 
 variable "github_owner"{
