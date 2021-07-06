@@ -5,8 +5,8 @@ terraform{
     }
 }
 
-resource "null_resource" "null"{
-    triggers = {
-        value = "Doing nothing"
-    }
-}
+# resource "null_resource" "null"{
+#     triggers = {
+#         value = "Doing nothing"
+#     }
+# }
