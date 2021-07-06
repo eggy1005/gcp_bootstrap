@@ -1,5 +1,5 @@
 variable "project_name" {
-  name = "jessy-cloud-${project_id}"
+  value = "jessy-cloud-${project_id}"
 }
 variable "billing_account" {}
 variable "org_id" {}
