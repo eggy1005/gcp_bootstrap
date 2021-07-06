@@ -1,6 +1,6 @@
 variable "github_token" {
     type = string
-    default = "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"
+    default = "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"
 }
 
 variable "github_owner"{
@@ -8,6 +8,6 @@ variable "github_owner"{
     default = "eggy1005"
 }
 variable "gcp_billing_acc"{
-    type=string
-    default = "jessy_zhu96@hotmail.com"
+    type = string
+    default = "013CB4-BD99C7-67D5F5"
 }

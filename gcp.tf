@@ -1,7 +1,9 @@
 
-variable "billing_account" {}
-variable "org_id" {}
-variable "region" {}
+
+variable "region" {
+  default = "EU"
+}
+
 
 provider "google" {
   region = var.region
@@ -17,9 +19,9 @@ locals{
 }
 
 resource "google_project" "project" {
-  name            = "jessy-cloud-${locals.uid}"
-  project_id      = random_id.id.hex
-  billing_account = var.gcp_billing_account
+  name            = "jessy-cloud-${local.uid}"
+  project_id      = "gcp-${local.uid}"
+  billing_account = var.gcp_billing_acc
 }
 
 
