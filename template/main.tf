@@ -5,8 +5,6 @@ terraform{
     }
 }
 
-# resource "null_resource" "null"{
-#     triggers = {
-#         value = "Doing nothing"
-#     }
-# }
+resource "google_compute_network" "vpc_network" {
+  name = "vpc-network"
+}
