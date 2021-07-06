@@ -5,7 +5,7 @@ variable "github_token" {
 
 variable "github_owner"{
     type = string
-    default = "eggy1005 "
+    default = "eggy1005"
 }
 variable "gcp_billing_acc"{
     type=string
