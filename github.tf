@@ -17,14 +17,14 @@ resource "github_branch" "jessyimpl"{
 resource "github_actions_secret" "myaccount"{
     repository = github_repository.infra.name
     secret_name = "GCP_SA_KEY"
-    plaintext_value = base64decode(google_service_account_key.github_action_secrect.private_key)
+    plaintext_value = base64decode(google_service_account_key.github_action_secret.private_key)
 
 }
 
 resource "github_actions_secret" "project_id"{
     repository = github_repository.infra.name
     secret_name = "GCP_PROJECT_ID"
-    plaintext_value = google_project.project.name
+    plaintext_value = google_project.project_id
 }
 
 resource "github_repository_file" "tf_action_file"{
@@ -39,7 +39,7 @@ resource "github_repository_file" "tf_main_file" {
     repository = github_repository.infra.name
     branch = github_branch.jessyimpl.branch
     file = "main.tf"
-    content = templatefile("$(path.module)/template/main.tf", {
+    content = templatefile("${path.module}/template/main.tf", {
         bucket_name = google_storage_bucket.tf_state_bucket.name
     })
 }
