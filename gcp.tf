@@ -17,10 +17,9 @@ locals{
 }
 
 resource "google_project" "project" {
-  name            = "jessy-cloud-${uid}"
+  name            = "jessy-cloud-${locals.uid}"
   project_id      = random_id.id.hex
-  billing_account = var.billing_account
-  org_id          = var.org_id
+  billing_account = var.gcp_billing_account
 }
 
 
